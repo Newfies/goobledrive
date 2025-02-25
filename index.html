@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive</title>
+	<link rel="icon" href="drive_2022q3_32dp.png">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { margin: 10px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <br>
+    <label for="amount">Entries:</label>
+    <input type="number" id="amount" min="1" value="10" required>
+    <br>
+    <button onclick="maker()">maker</button>
+    <script>
+        function maker() {
+            let num = parseInt(document.getElementById("amount").value);
+			function xyz(){
+				return Math.floor(Math.random() * 1234567);
+			}
+            if (num < 1) {
+                alert("Please enter a valid URL and number.");
+                return;
+            }
+            for (let i = 1; i <= num; i++) {
+			let x = xyz()
+			let y = xyz()
+			let z = xyz()
+				history.pushState(0, 0, `#${i}?x=${x}&y=${y}&z=${z}`);
+            }
+				alert("done");
+        }
+    </script>
+</body>
+</html>
